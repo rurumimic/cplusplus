@@ -1,0 +1,7 @@
+cflags = -g -Wall
+
+rule cc
+  command = clang++ $cflags -c $in -o $out
+
+build helloworld: cc main.cpp
+

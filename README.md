@@ -4,12 +4,39 @@
 
 - clang
 - cmake: [repo](https://github.com/Kitware/CMake), [tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html), [tutorial code](https://github.com/Kitware/CMake/tree/master/Help/guide/tutorial)
-- ninja
 - gnu global
+
+---
 
 ## Hello, World!
 
 - [hello world](src/helloworld/main.cpp)
+
+```bash
+src/helloworld
+├── CMakeLists.txt
+├── GPATH
+├── GRTAGS
+├── GTAGS
+├── Makefile
+├── build/
+├── build.ninja
+└── main.cpp
+```
+
+### gtags
+
+```bash
+gtags
+```
+
+spacevim: [gtags](https://spacevim.org/layers/gtags/)
+
+- `Space` + `m` + `g`
+  - `Space` + `m` + `g` + `f`: list of objects
+  - `Space` + `m` + `g` + `d`: find definitions
+  - `Space` + `m` + `g` + `r`: find references
+  - `Space` + `m` + `g` + `g`: find cursor string
 
 ### Build
 
@@ -36,6 +63,7 @@ Hello, World!
 ```bash
 make
 ```
+
 ```bash
 ./helloworld
 
@@ -87,6 +115,20 @@ cmake --build build
 
 ```bash
 ./build/helloworld
+
+Hello, World!
+```
+
+#### ninja
+
+```bash
+ninja
+
+[1/1] clang++ -Wall -c main.cpp -o helloworld
+```
+
+```bash
+./helloworld
 
 Hello, World!
 ```
