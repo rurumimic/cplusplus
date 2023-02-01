@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,c,c++,cmake,vim,emacs,ninja
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,windows,visualstudiocode,c,c++,cmake,vim,emacs,ninja
+# Created by https://www.toptal.com/developers/gitignore/api/c,c++,vim,cmake,emacs,linux,macos,ninja,windows,visualstudiocode,tags
+# Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,vim,cmake,emacs,linux,macos,ninja,windows,visualstudiocode,tags
 
 ### C ###
 # Prerequisites
@@ -193,6 +193,25 @@ Temporary Items
 .ninja_deps
 .ninja_log
 
+### Tags ###
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+GSYMS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -209,7 +228,6 @@ Sessionx.vim
 # Temporary
 .netrwhist
 # Auto-generated tag files
-tags
 # Persistent undo
 [._]*.un~
 
@@ -258,5 +276,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,visualstudiocode,c,c++,cmake,vim,emacs,ninja
-
+# End of https://www.toptal.com/developers/gitignore/api/c,c++,vim,cmake,emacs,linux,macos,ninja,windows,visualstudiocode,tags
