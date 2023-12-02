@@ -20,26 +20,21 @@ src/helloworld
 gtags
 ```
 
-spacevim: [gtags](https://spacevim.org/layers/gtags/)
-
-- `Space` + `m` + `g`
-  - `Space` + `m` + `g` + `f`: list of objects
-  - `Space` + `m` + `g` + `d`: find definitions
-  - `Space` + `m` + `g` + `r`: find references
-  - `Space` + `m` + `g` + `g`: find cursor string
+new files: `GPATH`, `GRTAGS`, `GTAGS`
 
 ## Build
 
+### Select Compilers
+
 ```bash
-export CC=/opt/local/bin/clang
-export CXX=/opt/local/bin/clang++
+export CC=clang
+export CXX=clang++
 ```
 
-### clang
+### Compile
 
 ```bash
-clang++ -o helloworld main.cpp
-g++ -o helloworld main.cpp
+$CXX -o helloworld main.cpp
 ```
 
 ```bash
@@ -114,7 +109,8 @@ Hello, World!
 ```bash
 ninja
 
-[1/1] clang++ -Wall -c main.cpp -o helloworld
+[1/2] clang++ -Wall -c main.cpp -o main.o
+[1/2] clang++ main.o -o helloworld
 ```
 
 ```bash

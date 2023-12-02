@@ -3,5 +3,9 @@ cflags = -g -Wall
 rule cc
   command = clang++ $cflags -c $in -o $out
 
-build helloworld: cc main.cpp
+rule link
+  command = clang++ $in -o $out
+
+build main.o: cc main.cpp
+build helloworld: link main.o
 

@@ -1,4 +1,7 @@
 !Makefile
-build
+build/
 .ninja_log
+
+main.o
+helloworld
 
