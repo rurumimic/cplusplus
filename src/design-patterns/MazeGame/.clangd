@@ -1,5 +1,6 @@
 CompileFlags:
   Add:
+    - -std=c++11
     - -Ibuild
 Diagnostics:
   ClangTidy:

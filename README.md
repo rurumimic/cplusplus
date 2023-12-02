@@ -27,3 +27,4 @@ ______________________________________________________________________
 - Design Patterns
   - github:
     [BartVandewoestyne/Design-Patterns-GoF](https://github.com/BartVandewoestyne/Design-Patterns-GoF)
+

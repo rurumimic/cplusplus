@@ -10,6 +10,8 @@ class Room : public MapSite {
  public:
   Room(int RoomNo);
 
+  int GetRoomNumber();
+
   MapSite *GetSide(Direction) const;
   void SetSide(Direction, MapSite *);
 
