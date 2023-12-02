@@ -1,0 +1,3 @@
+#define Patterns_VERSION_MAJOR @Patterns_VERSION_MAJOR@
+#define Patterns_VERSION_MINOR @Patterns_VERSION_MINOR@
+

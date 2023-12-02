@@ -1,3 +1,6 @@
+private
+.cache
+
 # Created by https://www.toptal.com/developers/gitignore/api/c,c++,vim,cmake,emacs,linux,macos,ninja,windows,visualstudiocode,tags
 # Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,vim,cmake,emacs,linux,macos,ninja,windows,visualstudiocode,tags
 
