@@ -2,9 +2,7 @@
 
 Room::Room(int RoomNo) : _roomNumber(RoomNo) {}
 
-int Room::GetRoomNumber() {
-  return _roomNumber;
-}
+int Room::GetRoomNumber() { return _roomNumber; }
 
 MapSite* Room::GetSide(Direction direction) const {
   auto index = static_cast<std::size_t>(direction);

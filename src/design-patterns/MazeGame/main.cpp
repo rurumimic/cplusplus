@@ -3,14 +3,20 @@
 #include "MazeGame.h"
 #include "config.h"
 
-int main(int argc, char* argv[]) {
-  std::cout << "MazeGame" << std::endl;
+void version() {
+  std::cout << "v" << Patterns_VERSION_MAJOR << "." << Patterns_VERSION_MINOR
+            << std::endl;
+}
 
+int main(int argc, char* argv[]) {
+  version();
+
+  std::cout << "MazeGame" << std::endl;
   MazeGame mazeGame;
   Maze* maze = mazeGame.CreateMaze();
-  Room* r1 = maze->RoomNo(1);
 
-  std::cout << "Room 1: " << r1->GetRoomNumber() << std::endl;
+  Room* r1 = maze->RoomNo(1);
+  std::cout << "Room " << r1->GetRoomNumber() << std::endl;
 
   return 0;
 }

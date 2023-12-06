@@ -15,9 +15,5 @@ add_executable(${PROJECT_NAME} ${SHARED_SRC})
 
 add_library(game SHARED ${SHARED_SRC})
 
-add_subdirectory(abstract_factory)
-
-target_include_directories(${PROJECT_NAME} PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           )
+add_subdirectory(AbstractFactory)
 
