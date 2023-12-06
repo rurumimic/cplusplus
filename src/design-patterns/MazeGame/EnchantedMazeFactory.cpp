@@ -9,7 +9,7 @@ EnchantedMazeFactory::EnchantedMazeFactory() {
 }
 
 Spell* EnchantedMazeFactory::CastSpell() const {
-  std::cout << "CastSpell()" << std::endl;
+  std::cout << "- EnchantedMazeFactory::CastSpell()" << std::endl;
 
   return new Spell;
 }

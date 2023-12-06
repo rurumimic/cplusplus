@@ -3,5 +3,5 @@
 #include <iostream>
 
 MazeFactory::MazeFactory() {
-  std::cout << "MazeFactory::MazeFactory()" << std::endl;
+  std::cout << "Init MazeFactory()" << std::endl;
 }

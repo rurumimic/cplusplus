@@ -7,9 +7,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 configure_file(config.h.in config.h)
 
-file(GLOB SOURCES "*.cpp")
+include_directories(${PROJECT_BINARY_DIR})
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+file(GLOB SHARED_SRC "*.cpp")
+
+add_executable(${PROJECT_NAME} ${SHARED_SRC})
+
+add_library(game SHARED ${SHARED_SRC})
+
+add_subdirectory(abstract_factory)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
                            "${PROJECT_BINARY_DIR}"
