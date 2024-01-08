@@ -1,13 +1,18 @@
 #include "Maze.h"
 
+#include <cstddef>
+#include <memory>
+#include <stdexcept>
 #include <vector>
 
-void Maze::AddRoom(Room* room) { rooms.push_back(room); }
+void Maze::AddRoom(std::unique_ptr<Room> room) {
+  rooms.push_back(std::move(room));
+}
 
-Room* Maze::RoomNo(int n) const {
-  for (Room* room : rooms) {
+Room* Maze::GetRoom(int n) const {
+  for (const std::unique_ptr<Room>& room : rooms) {
     if (room->GetRoomNumber() == n) {
-      return room;
+      return room.get();
     }
   }
 

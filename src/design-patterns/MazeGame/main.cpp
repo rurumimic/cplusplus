@@ -13,11 +13,10 @@ int main(int argc, char* argv[]) {
 
   std::cout << "MazeGame" << std::endl;
   MazeGame mazeGame;
-  Maze* maze = mazeGame.CreateMaze();
+  std::unique_ptr<Maze> maze = mazeGame.CreateMaze();
 
-  Room* r1 = maze->RoomNo(1);
+  Room* r1 = maze->GetRoom(1);
   std::cout << "Room " << r1->GetRoomNumber() << std::endl;
 
   return 0;
 }
-

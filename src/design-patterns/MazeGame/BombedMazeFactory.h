@@ -1,26 +1,32 @@
 #ifndef BOMBED_MAZE_FACTORY_H
 #define BOMBED_MAZE_FACTORY_H
 
+#include <iostream>
+#include <memory>
+
 #include "BombedWall.h"
 #include "MazeFactory.h"
 #include "RoomWithABomb.h"
 
-class Room;
-class Wall;
-class MazeFactory;
-
 class BombedMazeFactory : public MazeFactory {
  public:
   BombedMazeFactory();
+  ~BombedMazeFactory() = default;
 
-  Wall* MakeWall() const override {
-    return new BombedWall;
+  BombedMazeFactory(const BombedMazeFactory&) = delete;  // copy constructor
+  BombedMazeFactory(BombedMazeFactory&&) = delete;       // move constructor
+  BombedMazeFactory& operator=(const BombedMazeFactory&) =
+      delete;  // copy assignment
+  BombedMazeFactory& operator=(BombedMazeFactory&&) =
+      delete;  // move assignment
+
+  [[nodiscard]] std::unique_ptr<Wall> MakeWall() const override {
+    return std::make_unique<BombedWall>();
   }
 
-  Room* MakeRoom(int n) const override {
-    return new RoomWithABomb(n);
+  [[nodiscard]] std::unique_ptr<Room> MakeRoom(int n) const override {
+    return std::make_unique<RoomWithABomb>(n);
   }
-
 };
 
 #endif  // BOMBED_MAZE_FACTORY_H

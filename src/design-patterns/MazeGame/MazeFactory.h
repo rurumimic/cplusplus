@@ -1,6 +1,9 @@
 #ifndef MAZE_FACTORY_H
 #define MAZE_FACTORY_H
 
+#include <iostream>
+#include <memory>
+
 #include "Door.h"
 #include "Maze.h"
 #include "Room.h"
@@ -10,10 +13,10 @@ class MazeFactory {
  public:
   MazeFactory();
 
-  virtual Maze* MakeMaze() const { return new Maze; }
-  virtual Wall* MakeWall() const { return new Wall; }
-  virtual Room* MakeRoom(int n) const { return new Room(n); }
-  virtual Door* MakeDoor(Room* r1, Room* r2) const { return new Door(r1, r2); }
+  [[nodiscard]] virtual std::unique_ptr<Maze> MakeMaze() const;
+  [[nodiscard]] virtual std::unique_ptr<Wall> MakeWall() const;
+  [[nodiscard]] virtual std::unique_ptr<Room> MakeRoom(int n) const;
+  virtual std::shared_ptr<Door> MakeDoor(Room* r1, Room* r2);
 };
 
 #endif  // MAZE_FACTORY_H

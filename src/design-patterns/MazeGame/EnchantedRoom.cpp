@@ -1,5 +1,4 @@
 #include "EnchantedRoom.h"
 
-#include "Spell.h"
-
-EnchantedRoom::EnchantedRoom(int n, Spell* spell) : Room(n), _spell(spell) {}
+EnchantedRoom::EnchantedRoom(int n, std::unique_ptr<Spell> spell)
+    : Room(n), _spell(std::move(spell)) {}
