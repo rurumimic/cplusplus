@@ -1,17 +1,20 @@
-#include "EnchantedMazeFactory.h"
+#include "enchanted_maze_factory.hpp"
 
-#include "Spell.h"
+#include <iostream>
+
+#include "door_needing_spell.hpp"
+#include "enchanted_room.hpp"
 
 EnchantedMazeFactory::EnchantedMazeFactory() {
   std::cout << "Init EnchantedMazeFactory()" << std::endl;
 }
 
 std::unique_ptr<Room> EnchantedMazeFactory::MakeRoom(int n) const {
-  return std::make_unique<Room>(n);
+  return std::make_unique<EnchantedRoom>(n, std::move(CastSpell()));
 }
 
 std::shared_ptr<Door> EnchantedMazeFactory::MakeDoor(Room* r1, Room* r2) const {
-  return std::make_shared<Door>(r1, r2);
+  return std::make_shared<DoorNeedingSpell>(r1, r2);
 }
 
 std::unique_ptr<Spell> EnchantedMazeFactory::CastSpell() const {

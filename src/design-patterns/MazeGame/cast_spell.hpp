@@ -1,7 +1,7 @@
 #ifndef CAST_SPELL_H
 #define CAST_SPELL_H
 
-#include "Spell.h"
+#include "spell.hpp"
 
 class CastSpell : public Spell {
  public:

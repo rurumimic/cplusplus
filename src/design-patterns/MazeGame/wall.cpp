@@ -1,3 +1,3 @@
-#include "Wall.h"
+#include "wall.hpp"
 
 void Wall::Enter() {}

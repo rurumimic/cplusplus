@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "BombedMazeFactory.h"
-#include "EnchantedMazeFactory.h"
-#include "MazeGame.h"
+#include "bombed_maze_factory.hpp"
 #include "config.h"
+#include "enchanted_maze_factory.hpp"
+#include "maze_game.hpp"
 
 void version() {
-  std::cout << "v" << Patterns_VERSION_MAJOR << "." << Patterns_VERSION_MINOR
+  std::cout << "v" << PATTERNS_VERSION_MAJOR << "." << PATTERNS_VERSION_MINOR
             << std::endl;
 }
 

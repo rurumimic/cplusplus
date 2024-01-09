@@ -1,7 +1,7 @@
 #ifndef BOMBED_WALL_H
 #define BOMBED_WALL_H
 
-#include "Wall.h"
+#include "wall.hpp"
 
 class BombedWall : public Wall {
  public:

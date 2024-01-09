@@ -1,9 +1,7 @@
 #ifndef DOOR_NEEDING_SPEEL_H
 #define DOOR_NEEDING_SPEEL_H
 
-#include "Door.h"
-
-class Room;
+#include "door.hpp"
 
 class DoorNeedingSpell : public Door {
  public:

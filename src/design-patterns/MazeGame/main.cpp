@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "MazeGame.h"
 #include "config.h"
+#include "maze_game.hpp"
 
 void version() {
-  std::cout << "v" << Patterns_VERSION_MAJOR << "." << Patterns_VERSION_MINOR
+  std::cout << "v" << PATTERNS_VERSION_MAJOR << "." << PATTERNS_VERSION_MINOR
             << std::endl;
 }
 

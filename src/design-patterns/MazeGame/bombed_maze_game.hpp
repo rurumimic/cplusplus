@@ -1,7 +1,7 @@
 #ifndef BOMBED_MAZE_GAME_H
 #define BOMBED_MAZE_GAME_H
 
-#include "MazeGame.h"
+#include "maze_game.hpp"
 
 class BombedMazeGame : public MazeGame {
  public:

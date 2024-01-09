@@ -11,7 +11,8 @@ bear -- cmake --build build
 ### Run
 
 ```bash
-./build/Patterns
+./build/patterns
+./build/abstract_factory/abstract_factory
 ```
 
 ## Format

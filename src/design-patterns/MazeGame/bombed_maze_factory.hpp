@@ -1,12 +1,11 @@
 #ifndef BOMBED_MAZE_FACTORY_H
 #define BOMBED_MAZE_FACTORY_H
 
-#include <iostream>
 #include <memory>
 
-#include "BombedWall.h"
-#include "MazeFactory.h"
-#include "RoomWithABomb.h"
+#include "bombed_wall.hpp"
+#include "maze_factory.hpp"
+#include "room_with_a_bomb.hpp"
 
 class BombedMazeFactory : public MazeFactory {
  public:

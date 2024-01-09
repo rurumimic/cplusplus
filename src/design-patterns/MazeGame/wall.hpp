@@ -1,7 +1,7 @@
 #ifndef WALL_H
 #define WALL_H
 
-#include "MapSite.h"
+#include "map_site.hpp"
 
 class Wall : public MapSite {
  public:

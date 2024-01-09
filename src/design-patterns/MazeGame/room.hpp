@@ -3,11 +3,9 @@
 
 #include <array>
 #include <memory>
-#include <vector>
-#include <iostream>
 
-#include "Direction.h"
-#include "MapSite.h"
+#include "direction.hpp"
+#include "map_site.hpp"
 
 class Room : public MapSite {
  public:

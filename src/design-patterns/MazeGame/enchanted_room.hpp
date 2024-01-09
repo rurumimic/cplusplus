@@ -1,8 +1,8 @@
 #ifndef ENCHANTED_ROOM_H
 #define ENCHANTED_ROOM_H
 
-#include "Room.h"
-#include "Spell.h"
+#include "room.hpp"
+#include "spell.hpp"
 
 class EnchantedRoom : public Room {
  public:

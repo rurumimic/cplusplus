@@ -3,12 +3,8 @@
 
 #include <memory>
 
-#include "Direction.h"
-#include "Door.h"
-#include "Maze.h"
-#include "MazeFactory.h"
-#include "Room.h"
-#include "Wall.h"
+#include "maze.hpp"
+#include "maze_factory.hpp"
 
 class MazeGame {
  public:

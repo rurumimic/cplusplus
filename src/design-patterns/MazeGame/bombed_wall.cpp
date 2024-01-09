@@ -1,3 +1,3 @@
-#include "BombedWall.h"
+#include "bombed_wall.hpp"
 
 BombedWall::BombedWall() : Wall() {}

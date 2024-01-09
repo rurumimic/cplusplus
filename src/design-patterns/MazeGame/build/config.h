@@ -1,3 +1,3 @@
-#define Patterns_VERSION_MAJOR 1
-#define Patterns_VERSION_MINOR 0
+#define PATTERNS_VERSION_MAJOR 1
+#define PATTERNS_VERSION_MINOR 0
 

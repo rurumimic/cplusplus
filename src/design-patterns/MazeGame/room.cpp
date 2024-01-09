@@ -1,9 +1,16 @@
-#include "Room.h"
-#include "Direction.h"
+#include "room.hpp"
 
-Room::Room(int RoomNo) : _roomNumber(RoomNo) {}
+#include <iostream>
 
-int Room::GetRoomNumber() { return _roomNumber; }
+#include "direction.hpp"
+
+Room::Room(int RoomNo) : _roomNumber(RoomNo) {
+  std::cout << "Init Room(" << _roomNumber << ")" << std::endl;
+}
+
+int Room::GetRoomNumber() {
+  return _roomNumber;
+}
 
 MapSite* Room::GetSide(Direction direction) {
   auto index = static_cast<std::size_t>(direction);

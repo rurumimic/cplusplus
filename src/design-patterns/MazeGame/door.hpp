@@ -1,9 +1,8 @@
 #ifndef DOOR_H
 #define DOOR_H
 
-#include "MapSite.h"
-#include "Room.h"
-#include <memory>
+#include "map_site.hpp"
+#include "room.hpp"
 
 class Door : public MapSite {
  public:

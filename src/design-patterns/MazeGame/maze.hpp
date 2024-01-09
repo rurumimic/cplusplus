@@ -1,15 +1,14 @@
 #ifndef MAZE_H
 #define MAZE_H
 
-#include <algorithm>
 #include <memory>
 #include <vector>
 
-#include "Room.h"
+#include "room.hpp"
 
 class Maze {
  public:
-  Maze() = default;
+  Maze();
   ~Maze() = default;
 
   Maze(const Maze&) = delete;             // copy constructor
