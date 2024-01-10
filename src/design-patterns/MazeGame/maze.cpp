@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Maze::Maze() { std::cout << "Maze::Maze()" << std::endl; }
+Maze::Maze() { std::cout << "Init Maze()" << std::endl; }
 
 void Maze::AddRoom(std::unique_ptr<Room> room) {
   int number = room->GetRoomNumber();

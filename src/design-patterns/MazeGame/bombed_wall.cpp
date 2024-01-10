@@ -1,3 +1,7 @@
 #include "bombed_wall.hpp"
 
-BombedWall::BombedWall() : Wall() {}
+#include <iostream>
+
+BombedWall::BombedWall() : Wall() {
+  std::cout << "Init BombedWall()" << std::endl;
+}

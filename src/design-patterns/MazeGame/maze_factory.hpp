@@ -11,6 +11,12 @@
 class MazeFactory {
  public:
   MazeFactory();
+  ~MazeFactory() = default;
+
+  MazeFactory(const MazeFactory&) = delete;             // copy constructor
+  MazeFactory(MazeFactory&&) = delete;                  // move constructor
+  MazeFactory& operator=(const MazeFactory&) = delete;  // copy assignment
+  MazeFactory& operator=(MazeFactory&&) = delete;       // move assignment
 
   [[nodiscard]] virtual std::unique_ptr<Maze> MakeMaze() const;
   [[nodiscard]] virtual std::unique_ptr<Wall> MakeWall() const;

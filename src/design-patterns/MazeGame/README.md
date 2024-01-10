@@ -3,9 +3,9 @@
 ## Build and Run
 
 ```bash
-cmake -S . -B build
-cmake --build build --target clean
-bear -- cmake --build build
+cmake -S . -B build;
+cmake --build build --target clean;
+bear -- cmake --build build;
 ```
 
 ### Run

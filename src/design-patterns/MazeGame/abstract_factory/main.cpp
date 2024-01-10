@@ -18,6 +18,7 @@ void enchantedMazeGame() {
 
   Room* r1 = maze->GetRoom(1);
   std::cout << "Room " << r1->GetRoomNumber() << std::endl;
+  std::cout << std::endl;
 }
 
 void bombedMazeGame() {
@@ -28,6 +29,7 @@ void bombedMazeGame() {
 
   Room* r1 = maze->GetRoom(1);
   std::cout << "Room " << r1->GetRoomNumber() << std::endl;
+  std::cout << std::endl;
 }
 
 int main(int argc, char* argv[]) {

@@ -9,14 +9,13 @@ class DoorNeedingSpell : public Door {
   DoorNeedingSpell(Room*, Room*);
   ~DoorNeedingSpell() = default;
 
-  DoorNeedingSpell(const DoorNeedingSpell&) = delete;  // copy constructor
-  DoorNeedingSpell(DoorNeedingSpell&&) = delete;       // move constructor
-  DoorNeedingSpell& operator=(const DoorNeedingSpell&) =
-      delete;                                                // copy assignment
-  DoorNeedingSpell& operator=(DoorNeedingSpell&&) = delete;  // move assignment
+  DoorNeedingSpell(const DoorNeedingSpell&) = delete;
+  DoorNeedingSpell(DoorNeedingSpell&&) = delete;
+  DoorNeedingSpell& operator=(const DoorNeedingSpell&) = delete;
+  DoorNeedingSpell& operator=(DoorNeedingSpell&&) = delete;
 
   void Enter() override;
-  Room *OtherSideFrom(Room *);
+  Room* OtherSideFrom(Room*);
 
  protected:
   Room* _r1;

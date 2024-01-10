@@ -5,7 +5,7 @@
 
 class Wall : public MapSite {
  public:
-  Wall() = default;
+  Wall();
   ~Wall() = default;
 
   Wall(const Wall&) = delete;             // copy constructor

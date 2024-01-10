@@ -12,12 +12,10 @@ class BombedMazeFactory : public MazeFactory {
   BombedMazeFactory();
   ~BombedMazeFactory() = default;
 
-  BombedMazeFactory(const BombedMazeFactory&) = delete;  // copy constructor
-  BombedMazeFactory(BombedMazeFactory&&) = delete;       // move constructor
-  BombedMazeFactory& operator=(const BombedMazeFactory&) =
-      delete;  // copy assignment
-  BombedMazeFactory& operator=(BombedMazeFactory&&) =
-      delete;  // move assignment
+  BombedMazeFactory(const BombedMazeFactory&) = delete;
+  BombedMazeFactory(BombedMazeFactory&&) = delete;
+  BombedMazeFactory& operator=(const BombedMazeFactory&) = delete;
+  BombedMazeFactory& operator=(BombedMazeFactory&&) = delete;
 
   [[nodiscard]] std::unique_ptr<Wall> MakeWall() const override {
     return std::make_unique<BombedWall>();
