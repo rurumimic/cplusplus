@@ -12,7 +12,7 @@ void Maze::AddRoom(std::unique_ptr<Room> room) {
 }
 
 Room* Maze::GetRoom(int n) const {
-  for (const std::unique_ptr<Room>& room : rooms) {
+  for (const auto& room : rooms) {
     if (room->GetRoomNumber() == n) {
       std::cout << "Maze::GetRoom(" << n << ")" << std::endl;
       return room.get();
