@@ -8,7 +8,7 @@ Room::Room(int RoomNo) : _roomNumber(RoomNo) {
   std::cout << "Init Room(" << _roomNumber << ")" << std::endl;
 }
 
-int Room::GetRoomNumber() {
+int Room::GetRoomNumber() const {
   return _roomNumber;
 }
 

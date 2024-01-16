@@ -18,7 +18,7 @@ class Room : public MapSite {
   Room& operator=(const Room&) = delete;  // copy assignment
   Room& operator=(Room&&) = delete;       // move assignment
 
-  int GetRoomNumber();
+  [[nodiscard]] int GetRoomNumber() const;
 
   MapSite* GetSide(Direction);
   void SetSide(Direction, std::shared_ptr<MapSite>);
