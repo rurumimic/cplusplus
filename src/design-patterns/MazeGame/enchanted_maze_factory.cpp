@@ -9,6 +9,14 @@ EnchantedMazeFactory::EnchantedMazeFactory() {
   std::cout << "Init EnchantedMazeFactory()" << std::endl;
 }
 
+std::unique_ptr<Maze> EnchantedMazeFactory::MakeMaze() const {
+  return std::make_unique<Maze>();
+}
+
+std::unique_ptr<Wall> EnchantedMazeFactory::MakeWall() const {
+  return std::make_unique<Wall>();
+}
+
 std::unique_ptr<Room> EnchantedMazeFactory::MakeRoom(int n) const {
   return std::make_unique<EnchantedRoom>(n, std::move(CastSpell()));
 }

@@ -11,17 +11,17 @@
 class MazeFactory {
  public:
   MazeFactory();
-  ~MazeFactory() = default;
+  virtual ~MazeFactory() = default;
 
   MazeFactory(const MazeFactory&) = delete;             // copy constructor
   MazeFactory(MazeFactory&&) = delete;                  // move constructor
   MazeFactory& operator=(const MazeFactory&) = delete;  // copy assignment
   MazeFactory& operator=(MazeFactory&&) = delete;       // move assignment
 
-  [[nodiscard]] virtual std::unique_ptr<Maze> MakeMaze() const;
-  [[nodiscard]] virtual std::unique_ptr<Wall> MakeWall() const;
-  [[nodiscard]] virtual std::unique_ptr<Room> MakeRoom(int n) const;
-  virtual std::shared_ptr<Door> MakeDoor(Room* r1, Room* r2) const;
+  [[nodiscard]] virtual std::unique_ptr<Maze> MakeMaze() const = 0;
+  [[nodiscard]] virtual std::unique_ptr<Wall> MakeWall() const = 0;
+  [[nodiscard]] virtual std::unique_ptr<Room> MakeRoom(int n) const = 0;
+  virtual std::shared_ptr<Door> MakeDoor(Room* r1, Room* r2) const = 0;
 };
 
 #endif  // MAZE_FACTORY_H

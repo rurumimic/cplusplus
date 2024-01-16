@@ -9,13 +9,15 @@
 class EnchantedMazeFactory : public MazeFactory {
  public:
   EnchantedMazeFactory();
-  ~EnchantedMazeFactory() = default;
+  ~EnchantedMazeFactory() override = default;
 
   EnchantedMazeFactory(const EnchantedMazeFactory&) = delete;
   EnchantedMazeFactory(EnchantedMazeFactory&&) = delete;
   EnchantedMazeFactory& operator=(const EnchantedMazeFactory&) = delete;
   EnchantedMazeFactory& operator=(EnchantedMazeFactory&&) = delete;
 
+  [[nodiscard]] std::unique_ptr<Maze> MakeMaze() const override;
+  [[nodiscard]] std::unique_ptr<Wall> MakeWall() const override;
   [[nodiscard]] std::unique_ptr<Room> MakeRoom(int n) const override;
   std::shared_ptr<Door> MakeDoor(Room* r1, Room* r2) const override;
 
