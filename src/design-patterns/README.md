@@ -12,6 +12,7 @@
 
 - builder
 - factory
+  - abstract factory: [MazeGame](MazeGame/README.md)
 - prototype
 - singleton
 

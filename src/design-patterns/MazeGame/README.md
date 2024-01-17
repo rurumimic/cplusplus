@@ -3,15 +3,16 @@
 ## Build and Run
 
 ```bash
-cmake -S . -B build
-cmake --build build --target clean
-bear -- cmake --build build
+cmake -S . -B build;
+cmake --build build --target clean;
+bear -- cmake --build build;
 ```
 
 ### Run
 
 ```bash
-./build/Patterns
+./build/patterns
+./build/abstract_factory/abstract_factory
 ```
 
 ## Format

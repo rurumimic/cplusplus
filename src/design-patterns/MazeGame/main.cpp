@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "MazeGame.h"
 #include "config.h"
+#include "maze_game.hpp"
 
 void version() {
-  std::cout << "v" << Patterns_VERSION_MAJOR << "." << Patterns_VERSION_MINOR
+  std::cout << "v" << PATTERNS_VERSION_MAJOR << "." << PATTERNS_VERSION_MINOR
             << std::endl;
 }
 
@@ -13,11 +13,10 @@ int main(int argc, char* argv[]) {
 
   std::cout << "MazeGame" << std::endl;
   MazeGame mazeGame;
-  Maze* maze = mazeGame.CreateMaze();
+  std::unique_ptr<Maze> maze = mazeGame.CreateMaze();
 
-  Room* r1 = maze->RoomNo(1);
+  Room* r1 = maze->GetRoom(1);
   std::cout << "Room " << r1->GetRoomNumber() << std::endl;
 
   return 0;
 }
-
