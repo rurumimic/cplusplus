@@ -17,7 +17,7 @@ std::unique_ptr<Wall> BombedMazeFactory::MakeWall() const {
   return std::make_unique<BombedWall>();
 }
 
-std::unique_ptr<Room> BombedMazeFactory::MakeRoom(int n) const {
+std::unique_ptr<Room> BombedMazeFactory::MakeRoom(const int n) const {
   return std::make_unique<RoomWithABomb>(n);
 }
 

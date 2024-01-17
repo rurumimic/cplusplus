@@ -10,7 +10,7 @@
 class Room : public MapSite {
  public:
   Room() = delete;
-  Room(int RoomNo);
+  Room(const int RoomNo);
   ~Room() = default;
 
   Room(const Room&) = delete;             // copy constructor
@@ -20,7 +20,7 @@ class Room : public MapSite {
 
   [[nodiscard]] int GetRoomNumber() const;
 
-  MapSite* GetSide(Direction);
+  [[nodiscard]] MapSite* GetSide(Direction) const;
   void SetSide(Direction, std::shared_ptr<MapSite>);
 
   void Enter() override;

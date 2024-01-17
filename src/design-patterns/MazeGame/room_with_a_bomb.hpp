@@ -6,7 +6,7 @@
 class RoomWithABomb : public Room {
  public:
   RoomWithABomb() = delete;
-  RoomWithABomb(int = 0, bool bombed = false);
+  RoomWithABomb(const int = 0, const bool bombed = false);
   ~RoomWithABomb() = default;
 
   RoomWithABomb(const RoomWithABomb&) = delete;

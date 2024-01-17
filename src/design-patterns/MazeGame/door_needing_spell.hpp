@@ -15,7 +15,7 @@ class DoorNeedingSpell : public Door {
   DoorNeedingSpell& operator=(DoorNeedingSpell&&) = delete;
 
   void Enter() override;
-  Room* OtherSideFrom(Room*);
+  Room* OtherSideFrom(const Room*) const;
 
  protected:
   Room* _r1;

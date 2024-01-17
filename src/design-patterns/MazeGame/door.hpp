@@ -16,7 +16,7 @@ class Door : public MapSite {
   Door &operator=(Door &&) = delete;       // move assignment
 
   void Enter() override;
-  Room *OtherSideFrom(Room *);
+  Room *OtherSideFrom(const Room *) const;
 
  protected:
   Room* _room1;

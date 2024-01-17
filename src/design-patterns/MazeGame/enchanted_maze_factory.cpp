@@ -17,7 +17,7 @@ std::unique_ptr<Wall> EnchantedMazeFactory::MakeWall() const {
   return std::make_unique<Wall>();
 }
 
-std::unique_ptr<Room> EnchantedMazeFactory::MakeRoom(int n) const {
+std::unique_ptr<Room> EnchantedMazeFactory::MakeRoom(const int n) const {
   return std::make_unique<EnchantedRoom>(n, std::move(CastSpell()));
 }
 

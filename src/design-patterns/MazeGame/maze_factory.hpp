@@ -20,7 +20,7 @@ class MazeFactory {
 
   [[nodiscard]] virtual std::unique_ptr<Maze> MakeMaze() const = 0;
   [[nodiscard]] virtual std::unique_ptr<Wall> MakeWall() const = 0;
-  [[nodiscard]] virtual std::unique_ptr<Room> MakeRoom(int n) const = 0;
+  [[nodiscard]] virtual std::unique_ptr<Room> MakeRoom(const int n) const = 0;
   virtual std::shared_ptr<Door> MakeDoor(Room* r1, Room* r2) const = 0;
 };
 

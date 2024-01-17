@@ -7,7 +7,7 @@
 class EnchantedRoom : public Room {
  public:
   EnchantedRoom() = delete;
-  EnchantedRoom(int n, std::unique_ptr<Spell> spell);
+  EnchantedRoom(const int n, std::unique_ptr<Spell> spell);
   ~EnchantedRoom() = default;
 
   EnchantedRoom(const EnchantedRoom&) = delete;             // copy constructor

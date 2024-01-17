@@ -17,7 +17,7 @@ class Maze {
   Maze& operator=(Maze&&) = delete;       // move assignment
 
   void AddRoom(std::unique_ptr<Room> room);
-  [[nodiscard]] Room* GetRoom(int) const;
+  [[nodiscard]] Room* GetRoom(const int) const;
 
  private:
   std::vector<std::unique_ptr<Room>> rooms;

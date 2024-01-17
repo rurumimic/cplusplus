@@ -17,7 +17,7 @@ class BombedMazeFactory : public MazeFactory {
 
   [[nodiscard]] std::unique_ptr<Maze> MakeMaze() const override;
   [[nodiscard]] std::unique_ptr<Wall> MakeWall() const override;
-  [[nodiscard]] std::unique_ptr<Room> MakeRoom(int n) const override;
+  [[nodiscard]] std::unique_ptr<Room> MakeRoom(const int n) const override;
   std::shared_ptr<Door> MakeDoor(Room* r1, Room* r2) const override;
 };
 

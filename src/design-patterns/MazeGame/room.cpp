@@ -4,7 +4,7 @@
 
 #include "direction.hpp"
 
-Room::Room(int RoomNo) : _roomNumber(RoomNo) {
+Room::Room(const int RoomNo) : _roomNumber(RoomNo) {
   std::cout << "Init Room(" << _roomNumber << ")" << std::endl;
 }
 
@@ -12,7 +12,7 @@ int Room::GetRoomNumber() const {
   return _roomNumber;
 }
 
-MapSite* Room::GetSide(Direction direction) {
+MapSite* Room::GetSide(Direction direction) const {
   auto index = static_cast<std::size_t>(direction);
   return _sides[index].get();
 }
