@@ -6,6 +6,7 @@
 - [Design Patterns](src/design-patterns/README.md)
 - Optimization
 - [Threading Building Blocks](src/threading-building-blocks/README.md)
+- [Multithreading](src/multithreading/README.md)
 ______________________________________________________________________
 
 ## Tools
@@ -18,9 +19,13 @@ ______________________________________________________________________
 
 ## Refs
 
+- [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 - Design Patterns
   - github: [BartVandewoestyne/Design-Patterns-GoF](https://github.com/BartVandewoestyne/Design-Patterns-GoF)
 - Intel oneAPI
   - [Threading Building Blocks](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onetbb.html)
   - github: [oneTBB](https://github.com/oneapi-src/oneTBB)
+- Multithreading
+  - book: [Mastering C++ Multithreading](https://www.packtpub.com/product/mastering-c-multithreading/9781787121706)
+    - github: [Mastering C++ Multithreading](https://github.com/PacktPublishing/Mastering-CPP-Multithreading)
 
