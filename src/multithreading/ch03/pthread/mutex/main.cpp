@@ -1,6 +1,7 @@
 #include <iostream>
 #include <pthread.h>
 #include <stdlib.h>
+
 #define NUM_THREADS 5
 
 static pthread_mutex_t func_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -10,7 +11,7 @@ void func() {
 
   // Critical section
   // Do something that's not thread-safe
-  std::cout << "[func] Thread: " << pthread_self() << std::endl;
+  std::cout << "[func] Thread: '" << pthread_self() << "'" << std::endl;
 
   pthread_mutex_unlock(&func_mutex);
 }
@@ -25,7 +26,7 @@ void* worker(void* arg) {
   int value = *((int*) arg);
 
   // More code here
-  std::cout << "[worker] Thread: " << pthread_self() << ", value: " << value << std::endl;
+  std::cout << "[worker] Thread: '" << pthread_self() << "', value: '" << value << "'" << std::endl;
 
   return 0;
 }
@@ -33,7 +34,6 @@ void* worker(void* arg) {
 
 int main (int argc, char *argv[]) {
   pthread_t threads[NUM_THREADS]; // array of thread identifiers
-
   int thread_args[NUM_THREADS]; // array of integer thread arguments
 
   int result_code; // return values from pthread functions
