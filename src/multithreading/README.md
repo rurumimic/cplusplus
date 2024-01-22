@@ -8,7 +8,7 @@
 - ch03
   - Pthread
     - [mutex](ch03/pthread/mutex/README.md)
-    - cond
+    - [cond](ch03/pthread/cond/README.md)
     - rwlock
     - barrier
     - semaphore
