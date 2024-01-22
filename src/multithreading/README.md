@@ -8,11 +8,10 @@
 - ch03
   - Pthread
     - [mutex](ch03/pthread/mutex/README.md)
-    - cond
-    - rwlock
-    - barrier
-    - semaphore
-    - thread local storage
+    - [cond](ch03/pthread/cond/README.md)
+    - [rwlock, barrier](ch03/pthread/rwlock/README.md)
+    - [semaphore](ch03/pthread/semaphore/README.md)
+    - [thread local storage](ch03/pthread/thread_local_storage/README.md)
   - Qt
     - QThread
     - QThreadPool
