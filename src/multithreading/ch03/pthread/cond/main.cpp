@@ -21,7 +21,7 @@ void *add_count(void *t) {
     std::cout << "Counter value: " << count << " Thread ID: " << tid
               << std::endl;
 
-    if (count == COUNT_LIMIT) {       // if count reaches limit
+    if (count == COUNT_LIMIT) { // if count reaches limit
       std::cout << "Counter hit limit: " << COUNT_LIMIT << std::endl;
       pthread_cond_signal(&count_cv); // signal waiting thread
     }
