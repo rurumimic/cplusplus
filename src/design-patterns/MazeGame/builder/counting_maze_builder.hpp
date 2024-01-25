@@ -15,11 +15,11 @@ class CountingMazeBuilder : public MazeBuilder {
   CountingMazeBuilder& operator=(const CountingMazeBuilder&) = delete;
   CountingMazeBuilder& operator=(CountingMazeBuilder&&) = delete;
 
-  void BuildMaze() override;
-  void BuildRoom(const int room) override;
-  void BuilderDoor(const int roomFrom, const int roomTo) override;
+  void BuildMaze() final;
+  void BuildRoom(const int room) final;
+  void BuilderDoor(const int roomFrom, const int roomTo) final;
 
-  [[nodiscard]] std::unique_ptr<Maze> GetMaze() override;
+  [[nodiscard]] std::unique_ptr<Maze> GetMaze() final;
 
   void AddWall(int room, Direction direction);
 

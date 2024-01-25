@@ -1,5 +1,6 @@
 #include "standard_maze_builder.hpp"
 
+#include <cassert>
 #include <iostream>
 
 #include "door.hpp"
@@ -16,8 +17,12 @@ std::unique_ptr<Maze> StandardMazeBuilder::GetMaze() {
   return std::move(currentMaze);
 }
 
-Direction StandardMazeBuilder::CommonWall(const Room* room1,
-                                          const Room* room2) {
+Direction StandardMazeBuilder::CommonWall(const Room* const room1,
+                                          const Room* const room2) {
+
+  assert(room1 != nullptr);
+  assert(room2 != nullptr);
+
   std::cout << "StandardMazeBuilder::CommonWall(" << room1->GetRoomNumber()
             << ", " << room2->GetRoomNumber() << ")" << std::endl;
 
@@ -53,6 +58,9 @@ void StandardMazeBuilder::BuilderDoor(const int roomFrom, const int roomTo) {
 
   Room* r1 = currentMaze->GetRoom(roomFrom);
   Room* r2 = currentMaze->GetRoom(roomTo);
+
+  assert(r1 != nullptr);
+  assert(r2 != nullptr);
 
   std::shared_ptr<Door> aDoor = std::make_shared<Door>(r1, r2);
 

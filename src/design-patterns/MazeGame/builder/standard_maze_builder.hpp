@@ -16,14 +16,14 @@ class StandardMazeBuilder : public MazeBuilder {
   StandardMazeBuilder& operator=(const StandardMazeBuilder&) = delete;
   StandardMazeBuilder& operator=(StandardMazeBuilder&&) = delete;
 
-  void BuildMaze() override;
-  void BuildRoom(const int room) override;
-  void BuilderDoor(const int roomFrom, const int roomTo) override;
+  void BuildMaze() final;
+  void BuildRoom(const int room) final;
+  void BuilderDoor(const int roomFrom, const int roomTo) final;
 
-  [[nodiscard]] std::unique_ptr<Maze> GetMaze() override;
+  [[nodiscard]] std::unique_ptr<Maze> GetMaze() final;
 
  private:
-  Direction CommonWall(const Room* room1, const Room* room2);
+  Direction CommonWall(const Room* const room1, const Room* const room2);
   std::unique_ptr<Maze> currentMaze;
 };
 
