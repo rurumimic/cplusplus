@@ -1,5 +1,7 @@
 #include "maze_game.hpp"
 
+#include <memory>
+
 std::unique_ptr<Maze> MazeGame::CreateMaze() {
   std::unique_ptr<Maze> aMaze = std::make_unique<Maze>();
 
@@ -44,4 +46,22 @@ std::unique_ptr<Maze> MazeGame::CreateMaze(MazeFactory& factory) {
   aMaze->AddRoom(std::move(r2));
 
   return aMaze;
+}
+
+std::unique_ptr<Maze> MazeGame::CreateMaze(MazeBuilder& builder) {
+  builder.BuildMaze();
+
+  builder.BuildRoom(1);
+  builder.BuildRoom(2);
+  builder.BuilderDoor(1, 2);
+
+  return builder.GetMaze();
+}
+
+std::unique_ptr<Maze> MazeGame::CreateComplexMaze(MazeBuilder& builder) {
+  for (int i = 1; i < 1000; ++i) {
+    builder.BuildRoom(i);
+  }
+
+  return builder.GetMaze();
 }
