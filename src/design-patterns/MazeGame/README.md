@@ -27,6 +27,7 @@ bear -- ninja -C build;
 ```bash
 ./build/patterns
 ./build/abstract_factory/abstract_factory
+./build/builder/builder
 ```
 
 ## Format
