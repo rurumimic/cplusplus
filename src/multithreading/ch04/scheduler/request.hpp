@@ -21,14 +21,14 @@ public:
   void finish(const int thread_id) final;
 
 private:
-  typedef void (*logger_func)(std::unique_ptr<std::string> text);
+  typedef void (*logger)(std::unique_ptr<std::string> text);
 
 public:
-  void setOutput(logger_func log);
+  void setOutput(logger log);
 
 private:
   int value;
-  logger_func log;
+  logger log;
 };
 
 #endif // REQUEST_HPP

@@ -13,20 +13,26 @@
 std::sig_atomic_t signal_caught = 0;
 std::mutex log_mutex;
 
-void sigint_handler(const int sig) { signal_caught = 1; }
-
 void log(std::unique_ptr<std::string> text) {
   std::unique_lock<std::mutex> lock(log_mutex);
   std::cout << text->data() << std::endl;
+}
+
+void sigint_handler(const int sig) {
+  log(std::make_unique<std::string>("SIGINT received"));
+  signal_caught = 1;
 }
 
 int main(int argc, char *argv[]) {
 
   signal(SIGINT, &sigint_handler);
 
-  Dispatcher::init(10);
+  if (!Dispatcher::init(10)) {
+    log(std::make_unique<std::string>("Failed to initialise dispatcher."));
+    return 1;
+  }
 
-  std::cout << "Initialised." << std::endl;
+  log(std::make_unique<std::string>("Initialised."));
 
   int cycles = 0;
 
@@ -41,7 +47,7 @@ int main(int argc, char *argv[]) {
   std::this_thread::sleep_for(std::chrono::seconds(2));
   Dispatcher::stop();
 
-  std::cout << "Clean-up." << std::endl;
+  log(std::make_unique<std::string>("Clean-ups."));
 
   return 0;
 }

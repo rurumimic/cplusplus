@@ -126,7 +126,5 @@ Request:  29 on thread 9
 Finished: 29 on thread 9
 Request:  15 on thread 5
 Finished: 15 on thread 5
-All workers stopped
-All threads joined
 Clean-up.
 ```

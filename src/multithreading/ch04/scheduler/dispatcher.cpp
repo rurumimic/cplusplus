@@ -34,13 +34,10 @@ void Dispatcher::stop() {
     worker->stop();
   }
 
-  std::cout << "All workers stopped" << std::endl;
-
   for (auto &thread : all_threads) {
     thread.join();
   }
 
-  std::cout << "All threads joined" << std::endl;
 }
 
 void Dispatcher::addRequest(std::unique_ptr<AbstractRequest> request) {
