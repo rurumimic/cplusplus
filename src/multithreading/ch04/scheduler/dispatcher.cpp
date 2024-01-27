@@ -2,7 +2,6 @@
 
 #include "abstract_request.hpp"
 #include <condition_variable>
-#include <iostream>
 
 /**
  * static members are initialized only once when the program starts
