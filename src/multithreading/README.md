@@ -1,5 +1,10 @@
 # Multithreading
 
+- book: [Mastering C++ Multithreading](https://www.packtpub.com/product/mastering-c-multithreading/9781787121706)
+- github: [Mastering C++ Multithreading](https://github.com/PacktPublishing/Mastering-CPP-Multithreading)
+
+## Contents
+
 - [ch01](ch01/README.md)
   - lock_guard
   - unique_lock
@@ -31,4 +36,6 @@
     - Condition
     - Semaphore
     - RWLock
+- ch04
+  - [scheduler](ch04/scheduler/README.md)
 
