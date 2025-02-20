@@ -14,22 +14,26 @@
 cd oneTBB/examples/getting_started/sub_string_finder
 ```
 
-#### Edit header
-
-```cpp
-#include "oneapi/tbb/parallel_for.h"
-#include "oneapi/tbb/blocked_range.h"
-
-#include "../../common/utility/utility.hpp"
-```
-
 #### Build sub_string_finder
 
 ```bash
-cmake -S . -B Build
-cd build
-make sub_string_finder
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --debug-output -S . -B build
 ```
+
+- `CMAKE_EXPORT_COMPILE_COMMANDS=ON`: generate `compile_commands.json` file
+- `--debug-output`: print debug information
+
+```bash
+cd build
+```
+
+```bash
+make sub_string_finder VERBOSE=1
+# bear -- make sub_string_finder VERBOSE=1
+```
+
+- `bear`: generate `compile_commands.json` file. if `CMAKE_EXPORT_COMPILE_COMMANDS=ON` is not set
+- `VERBOSE=1`: print verbose information
 
 #### Run sub_string_finder
 
