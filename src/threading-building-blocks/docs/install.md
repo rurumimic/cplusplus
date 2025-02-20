@@ -36,6 +36,22 @@ sudo apt update
 sudo apt install intel-oneapi-tbb-devel
 ```
 
+#### add PATH
+
+```bash
+if [ -d "/opt/intel/oneapi/tbb/latest" ]; then
+    . /opt/intel/oneapi/tbb/latest/env/vars.sh
+fi
+```
+
+```bash
+echo $TBBROOT
+
+/opt/intel/oneapi/tbb/2022.0/env/..
+```
+
+---
+
 ## from Source
 
 - uxlfoundation/oneTBB: [INSTALL.md](https://github.com/uxlfoundation/oneTBB/blob/master/INSTALL.md)
