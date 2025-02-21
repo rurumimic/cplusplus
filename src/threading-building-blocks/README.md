@@ -15,3 +15,11 @@
 - [install](docs/install.md): package manager, from source
 - [examples](docs/examples.md): cmake, compile_commands.json
 
+---
+
+## Code
+
+### Basic
+
+- [init](src/basic/init/README.md): global_control
+
