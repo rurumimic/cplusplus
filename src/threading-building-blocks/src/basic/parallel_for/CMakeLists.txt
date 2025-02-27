@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 
 project(main VERSION 1.0)
 
-add_executable(main main.cpp apply_foo.cpp)
+file(GLOB SHARED_SRC "src/*.cpp")
+
+add_executable(main ${SHARED_SRC})
 
 find_package(TBB REQUIRED COMPONENTS tbb)
 

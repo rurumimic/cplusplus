@@ -28,6 +28,7 @@ class ApplyFoo {
         printf(", ");
       }
     }
+    printf(", ...");
     printf("]\n");
   }
 

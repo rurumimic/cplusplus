@@ -7,7 +7,8 @@ cmake \
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
 -DENABLE_FORMAT=ON \
 --debug-output \
--S . -B build
+-S . -B build \
+-G Ninja
 ```
 
 - `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` export compile commands
@@ -16,9 +17,12 @@ cmake \
 - `--debug-output` print debug output
 - `-S .` source directory
 - `-B build` build directory
+- `-G Ninja` use Ninja generator
+
 
 ```bash
-make -C build
+cmake --build build
+# make -C build
 ```
 
 ## Run
@@ -32,12 +36,14 @@ make -C build
 ### Make .clang-format
 
 ```bash
-make -C build clang-format
+cmake --build build --target clang-format
+# make -C build clang-format
 ```
 
 ### Format code
 
 ```bash
-make -C build format
+cmake --build build --target format
+# make -C build format
 ```
 

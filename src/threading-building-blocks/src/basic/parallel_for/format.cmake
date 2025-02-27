@@ -15,7 +15,7 @@ if(ENABLE_FORMAT)
 
         add_custom_target(
             format
-            COMMAND bash -c "find ${CMAKE_SOURCE_DIR} -iregex '.*\\.(h|c|cpp)$' | xargs ${CLANG_FORMAT} -i"
+            COMMAND bash -c "find ${CMAKE_SOURCE_DIR}/src \\( -name \"*.h\" -o -name \"*.c\" -o -name \"*.cpp\" \\) -print0 | xargs -0 -r ${CLANG_FORMAT} -i"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             COMMENT "Formatting source files with clang-format"
             VERBATIM
