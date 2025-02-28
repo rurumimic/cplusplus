@@ -7,6 +7,7 @@
 - Optimization
 - [Threading Building Blocks](src/threading-building-blocks/README.md)
 - [Multithreading](src/multithreading/README.md)
+- [Thread Pool](src/thread-pool/README.md)
 ______________________________________________________________________
 
 ## Tools
