@@ -31,6 +31,7 @@ cmake \
 ```bash
 cmake --build build
 # make -C build
+# ninja -C build
 ```
 
 ## Run
@@ -46,6 +47,7 @@ cmake --build build
 ```bash
 cmake --build build --target clang-format
 # make -C build clang-format
+# ninja -C build clang-format
 ```
 
 ### Format code
@@ -53,5 +55,6 @@ cmake --build build --target clang-format
 ```bash
 cmake --build build --target format
 # make -C build format
+# ninja -C build format
 ```
 
