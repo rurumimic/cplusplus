@@ -6,7 +6,9 @@ file(GLOB SHARED_SRC "src/*.cpp")
 
 add_executable(main ${SHARED_SRC})
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# include_directories(${PROJECT_SOURCE_DIR}/include)
 # target_include_directories(main PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
-include(format.cmake)
+include(cmake/include.cmake)
+include(cmake/format.cmake)
+

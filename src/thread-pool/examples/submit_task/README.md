@@ -2,9 +2,13 @@
 
 ## Download thread-pool
 
+in `include` directory:
+
 ```bash
 wget -P include https://raw.githubusercontent.com/bshoshany/thread-pool/master/include/BS_thread_pool.hpp
 ```
+
+or use [../../include/BS_thread_pool.hpp](../../include/BS_thread_pool.hpp)
 
 ## Build
 
@@ -12,7 +16,6 @@ wget -P include https://raw.githubusercontent.com/bshoshany/thread-pool/master/i
 cmake \
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
 -DENABLE_FORMAT=ON \
---debug-output \
 -S . -B build \
 -G Ninja
 ```
