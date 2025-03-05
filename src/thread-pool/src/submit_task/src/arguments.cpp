@@ -1,3 +1,5 @@
+#include "arguments.hpp"
+
 #include <chrono>
 #include <future>
 #include <iostream>

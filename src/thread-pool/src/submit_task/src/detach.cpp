@@ -1,3 +1,5 @@
+#include "detach.hpp"
+
 #include <chrono>
 #include <iostream>
 #include <thread>
