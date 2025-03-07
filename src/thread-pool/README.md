@@ -9,6 +9,10 @@
 wget -P include https://raw.githubusercontent.com/bshoshany/thread-pool/master/include/BS_thread_pool.hpp
 ```
 
+- build
+  - [C++23](docs/cpp23.md)
+  - [C++20](docs/cpp20.md)
+
 ## Examples
 
 - [submit_task](src/submit_task/README.md): task with no arguments or arguments, detached task, wait for task to finish, with a class
