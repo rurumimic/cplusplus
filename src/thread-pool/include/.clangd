@@ -1,0 +1,10 @@
+CompileFlags:
+  Add:
+    - -std=c++20
+    - -DBS_THREAD_POOL_NATIVE_EXTENSIONS
+Diagnostics:
+  ClangTidy:
+    Add:
+      - modernize-*
+      - clang-analyzer-*
+    Remove: modernize-use-trailing-return-type
