@@ -3,5 +3,6 @@
 
 int submit_squares_lambda();
 int submit_squares_functor();
+int submit_squares_detached();
 
 #endif  // !_SQUARES_H

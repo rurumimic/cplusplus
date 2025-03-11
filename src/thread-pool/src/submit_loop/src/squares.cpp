@@ -17,7 +17,7 @@ struct Squares {
 int submit_squares_lambda() {
   std::cout << "--- submit_squares_lambda ---\n";
 
-  BS::thread_pool pool;
+  BS::thread_pool pool(10);
 
   constexpr std::size_t max = 100;
   std::array<std::size_t, max> squares;
@@ -38,7 +38,7 @@ int submit_squares_lambda() {
 int submit_squares_functor() {
   std::cout << "--- submit_squares_functor ---\n";
 
-  BS::thread_pool pool;
+  BS::thread_pool pool(10);
 
   constexpr std::size_t max = 100;
   std::array<std::size_t, max> squares;
@@ -49,6 +49,28 @@ int submit_squares_functor() {
       pool.submit_loop(0, max, squares_functor);
 
   loop_future.wait();
+
+  for (std::size_t i = 0; i < max; i++) {
+    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+              << ((i % 5 != 4) ? " | " : "\n");
+  }
+
+  return 0;
+}
+
+int submit_squares_detached() {
+  std::cout << "--- submit_squares_detached ---\n";
+
+  BS::thread_pool pool(10);
+
+  constexpr std::size_t max = 100;
+  std::array<std::size_t, max> squares;
+
+  Squares<max> squares_functor(squares);
+
+  pool.detach_loop(0, max, squares_functor);
+
+  pool.wait();
 
   for (std::size_t i = 0; i < max; i++) {
     std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
