@@ -8,7 +8,7 @@ add_executable(main ${SHARED_SRC})
 
 # include_directories(${PROJECT_SOURCE_DIR}/include)
 # target_include_directories(main PRIVATE ${PROJECT_SOURCE_DIR}/include)
-# target_compile_definitions(main PRIVATE BS_THREAD_POOL_NATIVE_EXTENSIONS)
+target_compile_definitions(main PRIVATE BS_THREAD_POOL_NATIVE_EXTENSIONS)
 
 include(cmake/include.cmake)
 include(cmake/format.cmake)
