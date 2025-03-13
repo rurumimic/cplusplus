@@ -1,9 +1,9 @@
-#include "squares.hpp"
+#include "index.hpp"
 
 int main() {
-  submit_squares_lambda();
-  submit_squares_functor();
-  submit_squares_detached();
+  submit_index_lambda();
+  submit_index_functor();
+  submit_index_detached();
 
   return 0;
 }

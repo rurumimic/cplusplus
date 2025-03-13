@@ -1,4 +1,4 @@
-#include "squares.hpp"
+#include "index.hpp"
 
 #include <cstddef>  // std::size_t
 #include <iomanip>  // std::setw
@@ -14,8 +14,8 @@ struct Squares {
   void operator()(const std::size_t i) const { squares[i] = i * i; }
 };
 
-int submit_squares_lambda() {
-  std::cout << "--- submit_squares_lambda ---\n";
+int submit_index_lambda() {
+  std::cout << "--- submit_index_lambda ---\n";
 
   BS::thread_pool pool(10);
 
@@ -35,8 +35,8 @@ int submit_squares_lambda() {
   return 0;
 }
 
-int submit_squares_functor() {
-  std::cout << "--- submit_squares_functor ---\n";
+int submit_index_functor() {
+  std::cout << "--- submit_index_functor ---\n";
 
   BS::thread_pool pool(10);
 
@@ -58,8 +58,8 @@ int submit_squares_functor() {
   return 0;
 }
 
-int submit_squares_detached() {
-  std::cout << "--- submit_squares_detached ---\n";
+int submit_index_detached() {
+  std::cout << "--- submit_index_detached ---\n";
 
   BS::thread_pool pool(10);
 
