@@ -14,7 +14,7 @@ struct Squares {
   void operator()(const std::size_t i) const { squares[i] = i * i; }
 };
 
-int submit_index_lambda() {
+int submit_index_lambda(bool display) {
   std::cout << "--- submit_index_lambda ---\n";
 
   BS::thread_pool pool(10);
@@ -27,15 +27,17 @@ int submit_index_lambda() {
 
   loop_future.wait();
 
-  for (std::size_t i = 0; i < max; i++) {
-    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
-              << ((i % 5 != 4) ? " | " : "\n");
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
   }
 
   return 0;
 }
 
-int submit_index_functor() {
+int submit_index_functor(bool display) {
   std::cout << "--- submit_index_functor ---\n";
 
   BS::thread_pool pool(10);
@@ -50,16 +52,43 @@ int submit_index_functor() {
 
   loop_future.wait();
 
-  for (std::size_t i = 0; i < max; i++) {
-    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
-              << ((i % 5 != 4) ? " | " : "\n");
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
   }
 
   return 0;
 }
 
-int submit_index_detached() {
-  std::cout << "--- submit_index_detached ---\n";
+int submit_index_lambda_detached(bool display) {
+  std::cout << "--- submit_index_lambda_detached ---\n";
+
+  BS::thread_pool pool(10);
+
+  constexpr std::size_t max = 100;
+  std::array<std::size_t, max> squares;
+
+  Squares<max> squares_functor(squares);
+
+  pool.detach_loop(0, max,
+                   [&squares](const std::size_t i) { squares[i] = i * i; });
+
+  pool.wait();
+
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
+  }
+
+  return 0;
+}
+
+int submit_index_functor_detached(bool display) {
+  std::cout << "--- submit_index_functor_detached ---\n";
 
   BS::thread_pool pool(10);
 
@@ -72,9 +101,11 @@ int submit_index_detached() {
 
   pool.wait();
 
-  for (std::size_t i = 0; i < max; i++) {
-    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
-              << ((i % 5 != 4) ? " | " : "\n");
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
   }
 
   return 0;

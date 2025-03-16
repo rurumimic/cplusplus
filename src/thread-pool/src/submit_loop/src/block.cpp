@@ -18,7 +18,7 @@ struct Squares {
   }
 };
 
-int submit_block_lambda() {
+int submit_block_lambda(bool display) {
   std::cout << "--- submit_block_lambda ---\n";
 
   BS::thread_pool pool(10);
@@ -35,15 +35,17 @@ int submit_block_lambda() {
 
   loop_future.wait();
 
-  for (std::size_t i = 0; i < max; i++) {
-    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
-              << ((i % 5 != 4) ? " | " : "\n");
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
   }
 
   return 0;
 }
 
-int submit_block_functor() {
+int submit_block_functor(bool display) {
   std::cout << "--- submit_block_functor ---\n";
 
   BS::thread_pool pool(10);
@@ -58,16 +60,18 @@ int submit_block_functor() {
 
   loop_future.wait();
 
-  for (std::size_t i = 0; i < max; i++) {
-    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
-              << ((i % 5 != 4) ? " | " : "\n");
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
   }
 
   return 0;
 }
 
-int submit_block_detached() {
-  std::cout << "--- submit_block_detached ---\n";
+int submit_block_lambda_detached(bool display) {
+  std::cout << "--- submit_block_lambda_detached ---\n";
 
   BS::thread_pool pool(10);
 
@@ -85,9 +89,35 @@ int submit_block_detached() {
 
   pool.wait();
 
-  for (std::size_t i = 0; i < max; i++) {
-    std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
-              << ((i % 5 != 4) ? " | " : "\n");
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
+  }
+
+  return 0;
+}
+
+int submit_block_functor_detached(bool display) {
+  std::cout << "--- submit_block_functor_detached ---\n";
+
+  BS::thread_pool pool(10);
+
+  constexpr std::size_t max = 100;
+  std::array<std::size_t, max> squares;
+
+  Squares<max> squares_functor(squares);
+
+  pool.detach_blocks(0, max, squares_functor);
+
+  pool.wait();
+
+  if (display) {
+    for (std::size_t i = 0; i < max; i++) {
+      std::cout << std::setw(2) << i << "^2 = " << std::setw(4) << squares[i]
+                << ((i % 5 != 4) ? " | " : "\n");
+    }
   }
 
   return 0;
