@@ -56,6 +56,8 @@ T sum_multi_future_get(T min, T max) {
 int submit_block_sum() {
   std::cout << "--- submit_block_sum::future_get ---\n";
   std::cout << sum_future_get<std::uint64_t>(1, 1'000'000) << std::endl;
+
+  std::cout << "--- submit_block_sum::multi_future_get ---\n";
   std::cout << sum_multi_future_get<std::uint64_t>(1, 1'000'000) << std::endl;
 
   return 0;

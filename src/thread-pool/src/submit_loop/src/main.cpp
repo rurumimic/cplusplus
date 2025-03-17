@@ -1,6 +1,7 @@
 #include "block.hpp"
 #include "index.hpp"
 #include "return.hpp"
+#include "sequence.hpp"
 
 int main() {
   submit_index_lambda(true);
@@ -14,6 +15,8 @@ int main() {
   submit_block_functor_detached(true);
 
   submit_block_sum();
+
+  submit_sequence_factorial();
 
   return 0;
 }
