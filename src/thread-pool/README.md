@@ -16,7 +16,8 @@ wget -P include https://raw.githubusercontent.com/bshoshany/thread-pool/master/i
 ## Examples
 
 - [submit_task](src/submit_task/README.md): task with no arguments or arguments, detached task, wait for task to finish, with a class
-- [submit_loop](src/submit_loop/README.md): parallel loop
+- [submit_loop](src/submit_loop/README.md): submit/detached loop/blocks/sequence, multi future
+- [stream](src/stream/README.md): synced_stream, add_stream, remove_stream, flush
 
 ---
 
