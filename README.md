@@ -16,6 +16,7 @@ ______________________________________________________________________
 - cmake: [install](https://github.com/rurumimic/supply/blob/master/tools.md#cmake)
   - [repo](https://github.com/Kitware/CMake), [tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html), [tutorial code](https://github.com/Kitware/CMake/tree/master/Help/guide/tutorial)
 - [gnu global](https://www.gnu.org/software/global/): [install](https://github.com/rurumimic/supply/blob/master/tools.md#gnu-global)
+- [c++ insights](https://cppinsights.io/): [repo](https://github.com/andreasfertig/cppinsights)
 ______________________________________________________________________
 
 ## Refs
