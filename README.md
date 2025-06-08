@@ -21,6 +21,7 @@ ______________________________________________________________________
 
 ## Refs
 
+- [cppreference.com](https://en.cppreference.com/index.html)
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 - Design Patterns
   - github: [BartVandewoestyne/Design-Patterns-GoF](https://github.com/BartVandewoestyne/Design-Patterns-GoF)
