@@ -17,4 +17,5 @@ add_executable(patterns ${SHARED_SRC})
 add_library(game SHARED ${SHARED_SRC})
 
 add_subdirectory(abstract_factory)
+add_subdirectory(builder)
 

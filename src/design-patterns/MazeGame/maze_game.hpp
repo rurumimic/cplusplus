@@ -4,6 +4,7 @@
 #include <memory>
 
 #include "maze.hpp"
+#include "maze_builder.hpp"
 #include "maze_factory.hpp"
 
 class MazeGame {
@@ -18,6 +19,8 @@ class MazeGame {
 
   std::unique_ptr<Maze> CreateMaze();
   std::unique_ptr<Maze> CreateMaze(MazeFactory& factory);
+  std::unique_ptr<Maze> CreateMaze(MazeBuilder& builder);
+  std::unique_ptr<Maze> CreateComplexMaze(MazeBuilder& builder);
 };
 
 #endif  // MAZE_GAME_H

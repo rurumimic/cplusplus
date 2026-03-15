@@ -10,7 +10,7 @@
 
 ## Creational Patterns
 
-- builder
+- [builder](MazeGame/README.md)
 - factory
   - abstract factory: [MazeGame](MazeGame/README.md)
 - prototype

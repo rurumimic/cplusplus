@@ -6,7 +6,7 @@ Maze::Maze() { std::cout << "Init Maze()" << std::endl; }
 
 void Maze::AddRoom(std::unique_ptr<Room> room) {
   int number = room->GetRoomNumber();
-  rooms.emplace_back(room);
+  rooms.push_back(std::move(room));
 
   std::cout << "Maze::AddRoom(" << number << ")" << std::endl;
 }
